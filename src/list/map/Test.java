@@ -3,7 +3,7 @@ package list.map;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-
+/**@author 赵波测试类*/
 public class Test {
     public static void main(String[] args) {
         Student student1=new Student();
