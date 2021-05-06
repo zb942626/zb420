@@ -24,48 +24,56 @@ public class Test5 {
             fileWriter.newLine();
             System.out.println("请输入学生姓名");
             String one =input.next();
-            fileWriter.write(one+"     ");
+            fileWriter.write(one+"   ");
+
+
             System.out.println("请输入语文成绩");
             int one1 =input.nextInt();
             integers.add(one1);
-            fileWriter.write(one1+"    ");
+            fileWriter.write(one1+"  ");
+            String s1 = String.valueOf(one1);
+
             System.out.println("请输入数学成绩");
             int one2 =input.nextInt();
-            fileWriter.write(one2+"    ");
+            fileWriter.write(one2+"  ");
+            String s2 = String.valueOf(one2);
+
             integers.add(one2);
             System.out.println("请输入英语成绩");
             int one3 =input.nextInt();
             integers.add(one3);
             fileWriter.write(one3+"  ");
+            String s3 = String.valueOf(one3);
+
             int one4 =(one1+one2+one3)/3;
             integers.add(one4);
             fileWriter.write(one4+"  ");
         }
         fileWriter.flush();
         fileWriter.newLine();
-        fileWriter.write("每门课的平均分");
+        fileWriter.write("平均分");
         int oneClass = 0;
         int towClass =0;
         int threeClass=0;
         int four=0;
         for (int i=0;i<integers.size();i++){
-            if (i % 4 == 1) {
+            if (i % 4 == 0) {
             oneClass+=integers.get(i);
             }
-            if (i % 4 == 2) {
+            if (i % 4 == 1) {
                 towClass+=integers.get(i);
             }
-            if (i % 4 == 3) {
+            if (i % 4 == 2) {
                threeClass+=integers.get(i);
             }
-            if (i % 4 == 0) {
+            if (i % 4 == 3) {
                 four+=integers.get(i);
             }
         }
-        fileWriter.write(oneClass/3+"");
-        fileWriter.write(towClass/3+"");
-        fileWriter.write(threeClass/3+"");
-        fileWriter.write(four/3+"");
+        fileWriter.write(oneClass/3+"  ");
+        fileWriter.write(towClass/3+"  ");
+        fileWriter.write(threeClass/3+"  ");
+        fileWriter.write(four/3+"  ");
 
         fileWriter.close();
 
