@@ -4,6 +4,27 @@ package test;
 import java.util.*;
 
 public class Test4 {
+    public Test4(){
+
+    }
+    //待反查的Map数据成员
+    private HashMap<String, ArrayList<String>> map=new HashMap<>();
+    //构造方法
+    public Test4(HashMap<String, ArrayList<String>> map){
+        this.map=map;
+    }
+    //反查
+    public List<Object> getKeys(ArrayList value){
+        ArrayList<Object> keys=new ArrayList<>();
+        for(Map.Entry<String, ArrayList<String>> entry:this.map.entrySet()){
+            if(value.equals(entry.getValue())){
+                keys.add(entry.getKey());
+            }else{
+                continue;
+            }
+        }
+        return keys;
+    }
 
     public static void main(String[] args) {
         HashMap<String, ArrayList<String>> all = new HashMap<>();
@@ -40,15 +61,20 @@ public class Test4 {
             ArrayList<String> list = all.get(s2);
             for ( String S3 :list){
                 if (renwu.equals(S3)){
-                  if (list==san){
-                      System.out.println("三国演义");
-                  }
-                  else if (list==diao){
-                      System.out.println("射雕英雄传");
-                  }
-                  else if (list==ji){
-                      System.out.println("倚天屠龙记");
-                  }
+                    Test4 se=new Test4(all);
+                    for(Object S4:se.getKeys(list)){
+                        System.out.println(S4);
+                    }
+
+//                  if (list==san){
+//                      System.out.println("三国演义");
+//                  }
+//                  else if (list==diao){
+//                      System.out.println("射雕英雄传");
+//                  }
+//                  else if (list==ji){
+//                      System.out.println("倚天屠龙记");
+//                  }
                 }
             }
         }
